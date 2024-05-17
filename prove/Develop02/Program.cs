@@ -50,7 +50,7 @@ public class Journal{
     public void WriteEntry()
     {
         string prompt = GetRandomPrompt();
-        Console.WriteLine($"Your Prompt is {prompt}");
+        Console.WriteLine($"Your Prompt is: {prompt}");
         string response = Console.ReadLine();
         string date = DateTime.Now.ToString("dd-MM-yyyy");
 
