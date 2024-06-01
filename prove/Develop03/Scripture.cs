@@ -16,7 +16,7 @@ public class Scripture
         Console.WriteLine(_reference);
         foreach (Word word in _words)
         {
-            Console.WriteLine(word + " ");
+            Console.Write(word + " ");
         }
         Console.WriteLine();
     }
