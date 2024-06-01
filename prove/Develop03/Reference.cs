@@ -17,10 +17,10 @@ public class Reference
 
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
-        this._book = book;
-        this._chapter = chapter;
-        this._startVerse = startVerse;
-        this._endVerse = endVerse;
+        _book = book;
+        _chapter = chapter;
+        _startVerse = startVerse;
+        _endVerse = endVerse;
     }
 
     public override string ToString()

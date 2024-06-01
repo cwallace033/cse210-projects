@@ -1,8 +1,5 @@
 
 
-using System.Configuration.Assemblies;
-using System.Runtime.CompilerServices;
-
 public class Word
 {
     private string _text;

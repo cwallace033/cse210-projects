@@ -3,18 +3,21 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 public class Scripture
 {
     private Reference _reference;
     private List<Word> _words;
+    private Random _rand;
 
 
     public void Display()
     {
         Console.WriteLine(_reference);
-        Console.WriteLine(string.Join(" ", _words.Select(word => word.ToString())));
+        foreach (Word word in _words)
+        {
+            Console.WriteLine(word + " ");
+        }
         Console.WriteLine();
     }
 
@@ -30,13 +33,26 @@ public class Scripture
 
     public bool AllWordsErased()
     {
-        return _words.All(word => word.IsErased());
+        foreach (Word word in _words)
+        {
+            if (!word.IsErased())
+            {
+                return false;
+            }
+            
+        }
+        return true;
     }
 
     public Scripture (Reference reference, string text)
     {
         _reference = reference;
-        _words = text.Split(' ').Select(word => new Word(word)).ToList();
+        _words = new List<Word>();
+        foreach (string word in text.Split(' '))
+        {
+            _words.Add(new Word(word));
+        }
+        _rand = new Random();
     }
 
 }
